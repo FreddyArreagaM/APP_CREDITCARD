@@ -1,7 +1,22 @@
 <div class="card">
     <div class="card-body">
         <h5 class="titulo">LISTAR TARJETA</h5>
-        <table class="table" *ngFor="let list of listadoTarjetas">
+
+        <table class="table table-hover"  *ngFor="let list of listadoTarjetas">
+            <tbody>
+                <tr class="justify-content-center">
+                    <td> {{list.titular}} </td>
+                    <td> {{list.numeroTarjeta}} </td>
+                    <td> {{list.fechaExpiracion}}</td>
+                    <td> 
+                        <i class="fa-solid fa-pen-to-square text-info" (click)="editarTarjeta(list)"> </i>
+                        <i class="fa-solid fa-trash text-danger" (click)="eliminarTarjeta(list.id)"></i>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+
+        <!--<table class="table" *ngFor="let list of listadoTarjetas">
             <tbody>
                 <tr>
                     <td> {{list.titular}} </td>
@@ -13,6 +28,6 @@
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table>-->
     </div>
 </div>

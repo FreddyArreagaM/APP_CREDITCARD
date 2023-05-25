@@ -7,7 +7,6 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
-
 import { AppComponent } from './app.component';
 import { CrearTarjetaComponent } from './components/crear-tarjeta/crear-tarjeta.component';
 import { ListarTarjetaComponent } from './components/listar-tarjeta/listar-tarjeta.component';
@@ -27,8 +26,8 @@ import { initializeApp } from 'firebase/app';
     AngularFireModule.initializeApp(enviroment.firebase),
     FirestoreModule,
     AngularFirestoreModule,
-    BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    BrowserAnimationsModule, // required animations module
     provideFirebaseApp(() => initializeApp({})),
     provideFirestore(() => getFirestore()),
   ],

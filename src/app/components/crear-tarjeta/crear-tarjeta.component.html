@@ -16,7 +16,7 @@
                     [class.green-icon]="this.formTarjeta.get('titular')?.valid"
                     [class.red-icon]="this.formTarjeta.get('titular')?.invalid && this.formTarjeta.get('titular')?.touched"></i>
                 </span>
-                <input type="text" formControlName="titular" class="form-control" placeholder="Titular">
+                <input type="text" oninput="this.value = this.value.replace(/[^A-Za-zñÑáéíóúÁÉÍÓÚ\s. ]/g, '').replace(/(\..*)\./g, '$1');" formControlName="titular" class="form-control" placeholder="Titular">
             </div>
 
             <!-- Numero de la tarjeta -->
@@ -26,7 +26,7 @@
                     [class.green-icon]="this.formTarjeta.get('numeroTarjeta')?.valid"
                     [class.red-icon]="this.formTarjeta.get('numeroTarjeta')?.invalid && this.formTarjeta.get('numeroTarjeta')?.touched"></i>
                 </span>
-                <input type="text" formControlName="numeroTarjeta" maxlength="16" class="form-control" placeholder="Numero Tarjeta">
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"  formControlName="numeroTarjeta" maxlength="16" class="form-control" placeholder="Numero Tarjeta">
             </div>
 
             <div class="row">
@@ -38,7 +38,7 @@
                             [class.green-icon]="this.formTarjeta.get('fechaExpiracion')?.valid"
                             [class.red-icon]="this.formTarjeta.get('fechaExpiracion')?.invalid && this.formTarjeta.get('fechaExpiracion')?.touched"></i>
                         </span>
-                        <input type="text" class="form-control" maxlength="5" formControlName="fechaExpiracion" placeholder="MM/YY">
+                        <input type="text" oninput="this.value = this.value.replace(/[^0-9/]/g, '').replace(/(\..*)\./g, '$1');" pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})$" class="form-control" maxlength="5" formControlName="fechaExpiracion" placeholder="MM/YY">
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -49,7 +49,7 @@
                             [class.green-icon]="this.formTarjeta.get('cvv')?.valid"
                             [class.red-icon]="this.formTarjeta.get('cvv')?.invalid && this.formTarjeta.get('cvv')?.touched"></i>
                         </span>
-                        <input type="password" class="form-control" maxlength="3" formControlName="cvv" placeholder="CVV">
+                        <input type="password"  oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" class="form-control" maxlength="3" formControlName="cvv" placeholder="CVV">
                     </div>
                 </div>
             </div>
