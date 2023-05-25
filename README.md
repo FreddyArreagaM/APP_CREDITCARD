@@ -2,4 +2,4 @@
 
 LinkAppWeb: https://appcreditcard.netlify.app/
 
-![image](https://github.com/FreddyArreagaM/APP_CREDITCARD/assets/127709400/7c912358-269c-4a7b-8652-e25603857bc6)
+![image](https://github.com/FreddyArreagaM/APP_CREDITCARD/assets/127709400/6e2972a9-bfbe-42df-9adf-0fb80d884d97)
